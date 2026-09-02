@@ -18,6 +18,11 @@ make network requests.
 
 ## Installation
 
+### ComfyUI Manager
+
+Open ComfyUI Manager, search for **CyberZiT Scheduler**, install it, and restart
+ComfyUI.
+
 ### Git
 
 Open a terminal in `ComfyUI/custom_nodes` and run:

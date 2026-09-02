@@ -21,3 +21,8 @@ Homepage = "https://github.com/cyberdeliaAI/ComfyUI-CyberZiT"
 Repository = "https://github.com/cyberdeliaAI/ComfyUI-CyberZiT"
 Documentation = "https://github.com/cyberdeliaAI/ComfyUI-CyberZiT#readme"
 Issues = "https://github.com/cyberdeliaAI/ComfyUI-CyberZiT/issues"
+
+[tool.comfy]
+PublisherId = "cyberdelia"
+DisplayName = "CyberZiT Scheduler"
+Icon = "https://raw.githubusercontent.com/cyberdeliaAI/ComfyUI-CyberZiT/main/assets/icon.png"
