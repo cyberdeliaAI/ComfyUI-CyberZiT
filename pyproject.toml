@@ -1,0 +1,23 @@
+[project]
+name = "cyberzit"
+version = "0.1.0"
+description = "Preset sigma schedules for Z-Image Turbo and Anima-Turbo in ComfyUI"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "cyberdeliaAI" },
+]
+dependencies = []
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://github.com/cyberdeliaAI/ComfyUI-CyberZiT"
+Repository = "https://github.com/cyberdeliaAI/ComfyUI-CyberZiT"
+Documentation = "https://github.com/cyberdeliaAI/ComfyUI-CyberZiT#readme"
+Issues = "https://github.com/cyberdeliaAI/ComfyUI-CyberZiT/issues"
