@@ -11,6 +11,12 @@ import math
 from dataclasses import dataclass
 
 
+# ``math.exp2`` was added in Python 3.11. Keep identical behaviour on newer
+# Python versions while retaining compatibility with ComfyUI installations
+# that still use Python 3.10.
+_EXP2 = getattr(math, "exp2", lambda value: 2.0**value)
+
+
 @dataclass(frozen=True)
 class Preset:
     """Parameters for one calibrated CyberZiT trajectory."""
@@ -70,7 +76,7 @@ def build_sigma_values(
     shift = PRESETS[preset].shift
     # A deliberately restrained range: detail=-1 -> 0.75, detail=1 -> 1.333.
     # This tunes the preset without turning one simple control into a curve lab.
-    exponent = math.exp2(detail * math.log2(4.0 / 3.0))
+    exponent = _EXP2(detail * math.log2(4.0 / 3.0))
 
     values: list[float] = []
     for index in range(steps + 1):
