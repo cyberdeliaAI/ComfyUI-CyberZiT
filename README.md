@@ -1,5 +1,9 @@
 # ComfyUI-CyberZiT
 
+<p align="center">
+  <img src="assets/icon.png" alt="CyberZiT Scheduler icon" width="200">
+</p>
+
 [![Tests](https://github.com/cyberdeliaAI/ComfyUI-CyberZiT/actions/workflows/tests.yml/badge.svg)](https://github.com/cyberdeliaAI/ComfyUI-CyberZiT/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
