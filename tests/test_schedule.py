@@ -5,6 +5,12 @@ from cyberzit_schedule import PRESETS, build_sigma_values
 
 
 class CyberZiTScheduleTests(unittest.TestCase):
+    def test_preset_shifts_are_stable(self):
+        self.assertEqual(
+            {name: preset.shift for name, preset in PRESETS.items()},
+            {"fast": 1.0, "balanced": 1.75, "quality": 3.0},
+        )
+
     def test_every_preset_has_correct_shape_endpoints_and_order(self):
         for preset in PRESETS:
             with self.subTest(preset=preset):

@@ -19,7 +19,7 @@ _EXP2 = getattr(math, "exp2", lambda value: 2.0**value)
 
 @dataclass(frozen=True)
 class Preset:
-    """Parameters for one calibrated CyberZiT trajectory."""
+    """Parameters for one CyberZiT trajectory."""
 
     shift: float
     description: str
@@ -32,7 +32,7 @@ PRESETS: dict[str, Preset] = {
     ),
     "balanced": Preset(
         shift=1.75,
-        description="A mild flow shift that retains structure without a hard final jump.",
+        description="A mild flow shift between the fast and quality trajectories.",
     ),
     "quality": Preset(
         shift=3.0,

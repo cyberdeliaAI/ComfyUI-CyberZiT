@@ -7,6 +7,7 @@ from collections.abc import Callable
 
 import torch
 
+import comfy.model_sampling
 import comfy.samplers
 
 from .cyberzit_schedule import PRESETS, build_sigma_values
@@ -21,15 +22,30 @@ def _as_sigmas(steps: int, preset: str, detail: float = 0.0) -> torch.Tensor:
     return torch.tensor(values, dtype=torch.float32)
 
 
+def _validate_model_sampling(model_sampling: object) -> None:
+    """Reject model types that do not use the supported discrete flow schedule."""
+
+    if not isinstance(model_sampling, comfy.model_sampling.ModelSamplingDiscreteFlow):
+        raise ValueError(
+            "CyberZiT KSampler schedulers require ModelSamplingDiscreteFlow "
+            "(such as Z-Image Turbo or Anima-Turbo); got "
+            f"{type(model_sampling).__name__}. "
+            "Choose a scheduler compatible with your model."
+        )
+
+
 def cyberzit_fast_scheduler(_model_sampling: object, steps: int) -> torch.Tensor:
+    _validate_model_sampling(_model_sampling)
     return _as_sigmas(steps, "fast")
 
 
 def cyberzit_balanced_scheduler(_model_sampling: object, steps: int) -> torch.Tensor:
+    _validate_model_sampling(_model_sampling)
     return _as_sigmas(steps, "balanced")
 
 
 def cyberzit_quality_scheduler(_model_sampling: object, steps: int) -> torch.Tensor:
+    _validate_model_sampling(_model_sampling)
     return _as_sigmas(steps, "quality")
 
 
